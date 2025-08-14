@@ -1,0 +1,24 @@
+<!-- Google Analytics -->
+<!-- このコードをサイト公開時に各HTMLファイルの</head>の直前に追加してください -->
+<!-- YOUR_GA_MEASUREMENT_IDをあなたのGoogle Analytics測定IDに置き換えてください -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_GA_MEASUREMENT_ID');
+</script>
+
+<!-- Google Search Console用メタタグ -->
+<!-- このメタタグをサイト公開時に各HTMLファイルの<head>内に追加してください -->
+<!-- YOUR_SEARCH_CONSOLE_CODEをあなたのSearch Console認証コードに置き換えてください -->
+<meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_CODE" />
+
+<!-- 使用方法：
+1. Google Analytics 4でプロパティを作成し、測定IDを取得
+2. Google Search Consoleでサイトを登録し、HTMLタグ認証コードを取得
+3. 上記のコードを各HTMLファイルに追加
+4. robots.txtとsitemap.xmlをサーバーのルートディレクトリにアップロード
+-->
