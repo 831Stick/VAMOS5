@@ -1,11 +1,10 @@
 /* ...reset, font, body... */
 
 body {
-  margin: 0;
   font-family: 'Noto Serif JP', serif;
   background: #000;
   color: #fff;
-  overflow-x: hidden; /* 追横スクロール防止 */
+  overflow-x: hidden;
   padding-top: 64px;
 }
 
@@ -17,24 +16,20 @@ a {
 /* ヘッダー */
 .site-header {
   background: #8fd3d6;
-  padding: 0;
-  position: fixed; /* 固定ヘッダー */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1000;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18); /* 影を強く */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 .header-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  max-width: none;
   margin: 0 auto;
   padding: 0.5em 3vw;
-  box-sizing: border-box;
-  min-height: 65px;
   height: 65px;
 }
 .header-logo-link {
@@ -50,12 +45,7 @@ a {
   height: 50px;
   margin-right: 0.2em;
 }
-.header-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #222;
-  letter-spacing: 0.1em;
-}
+
 .header-nav {
   display: flex;
   align-items: center;
@@ -65,8 +55,6 @@ a {
   display: flex;
   gap: 1.2em;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 .nav-list li a {
   color: #222;
@@ -82,7 +70,6 @@ a {
   gap: 0.7em;
   list-style: none;
   margin: 0 0 0 1.2em;
-  padding: 0;
 }
 .sns-icon {
   width: 22px;
@@ -97,7 +84,7 @@ a {
   align-items: center;
   width: 38px;
   height: 38px;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   margin-left: 1em;
@@ -109,34 +96,43 @@ a {
   background: #222;
   margin: 4px 0;
   border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* ハンバーガーメニューアクティブ時の×変形 */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
 }
 .mobile-nav {
   display: none;
-  
   color: #222;
-  margin: 4px 0;
-  background: rgba(224,247,250,0.65); /* 明るい水色に変更 */
-  text-align: center;  /* 中央揃え */
+  background: rgba(224,247,250,0.65);
+  text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   border-radius: 0 0 12px 12px;
   padding-bottom: 1em;
-  
 }
 .mobile-nav.show {
   display: block;
 }
 .mobile-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
   text-align: center;
 }
 .mobile-nav ul li {
   margin: 0.7em 0;
   padding: 0.7em 0;
-  border-bottom: 1px solid #b2ebf2; /* 区切り線 */
-}
-.mobile-nav ul li:last-child {
   border-bottom: 1px solid #b2ebf2;
 }
 .mobile-nav .sns-list {
@@ -158,18 +154,39 @@ a {
 .main-visual {
   position: relative;
   background: #000;
-  min-height: 750px;
   height: 750px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 3em 0 2em 0; 削除して隙間をなくす */
-  padding: 0;
   overflow: hidden;
   width: 100vw;
-  max-width: 100vw;
-  box-sizing: border-box;
 }
+
+/* 背景スライドショー */
+.background-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  pointer-events: none;
+}
+.bg-slide.active {
+  opacity: 0.6;
+}
+
 .main-logo-bg {
   position: absolute;
   left: 50%;
@@ -180,9 +197,7 @@ a {
   pointer-events: none;
   width: 100vw;
   height: 750px;
-  max-height: 750px;
   object-fit: cover;
-  /* ヘッダー裏に隠れてもOK */
 }
 .video-overlay {
   position: absolute;
@@ -190,19 +205,18 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(139, 56, 8, 0.2); /* 深緑のオーバーレイ、透明度40% */
+  background: rgba(139, 56, 8, 0.2);
   z-index: 1;
   pointer-events: none;
 }
 .main-visual-text {
   position: relative;
-  z-index: 2; /* オーバーレイより上に表示 */
+  z-index: 2;
   text-align: center;
   width: 100%;
-  max-width: 95vw; /* 追加: 文字領域のはみ出し防止 */
+  max-width: 95vw;
   margin: 0 auto;
   word-break: break-word;
-  box-sizing: border-box;
 }
 .main-visual-text h1 {
   font-size: 2.3em;
@@ -432,7 +446,7 @@ a {
   font-size: 1.1em;
   font-weight: 500;
   line-height: 2;
-  min-width: 400px; /* 320pxから400pxに拡大してマップとサイズを合わせる */
+  min-width: 400px;
 }
 .access-info h1 {
   margin: 0 0 0.5em 0;
@@ -442,15 +456,12 @@ a {
 .access-map iframe {
   border-radius: 8px;
   border: 1px solid #aaa;
-  width: 400px; /* 320pxから400pxに拡大 */
-  height: 280px; /* 200pxから280pxに拡大 */
-  max-width: 95vw; /* 追加: はみ出し防止 */
-  box-sizing: border-box;
+  width: 400px;
+  height: 280px;
+  max-width: 95vw;
 }
 .access-list {
   list-style: none;
-  padding: 0;
-  margin: 0 0 0 0;
   font-size: 1.1em;
 }
 .access-list li {
@@ -474,7 +485,7 @@ a {
   text-align: left;
   display: block;
   word-break: break-word;
-  line-height: 1.6; /* 行間を調整 */
+  line-height: 1.6;
 }
 .access-value[href] {
   color: #00796b;
@@ -673,7 +684,7 @@ footer {
   }
   .access-section {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* 中央揃えに変更 */
     gap: 2em;
     padding: 2em 2vw;
     width: 100vw;
@@ -685,6 +696,7 @@ footer {
     max-width: 95vw;
     box-sizing: border-box;
     font-size: 0.95em; /* フォントサイズ小さく */
+    margin: 0 auto; /* 中央揃え */
   }
   .footer-nav ul, .footer-sns,
   .footer-left, .footer-right {
@@ -730,7 +742,6 @@ footer {
     white-space: nowrap;
   }
   
-  /* モバイル版オプションテーブル */
   .option-label {
     font-size: 0.8em;
     white-space: nowrap;
@@ -751,7 +762,6 @@ footer {
   }
 }
 
-/* 小さい画面用の追加調整 */
 @media (max-width: 600px) {
   .pricing-section {
     padding: 1.5em 0.5em;
@@ -835,7 +845,7 @@ footer {
 .page_main-visual {
   position: relative;
   background: #000;
-  min-height: 420px;
+  min-height: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1038,15 +1048,15 @@ footer {
   font-size: 0.95em;
   line-height: 1.6;
   margin-bottom: 0.5em;
-  padding-left: 1em;
+  padding-left: 0;
   position: relative;
 }
-.details-content li:before {
+/* .details-content li:before {
   content: "●";
   color: #8fd3d6;
   position: absolute;
   left: 0;
-}
+} */
 .menu-category {
   margin-bottom: 1.5em;
 }
@@ -1281,19 +1291,464 @@ footer {
   }
   .main-visual-text h1 {
     font-size: 2.3em;
-    margin-bottom: 0.5em;
-    white-space: nowrap; /* 改行抑制 */
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .main-hours {
-    font-size: 2em;
-    max-width: 700px;
-    white-space: nowrap;
-  }
-  .main-hours-label,
-  .main-hours-time {
-    font-size: 1.5em;
-    white-space: nowrap;
   }
 }
+
+/* 求人ページのスタイル */
+.recruit-section {
+  padding: 4em 2em;
+  background: #000;
+  color: #fff;
+  min-height: calc(100vh - 130px);
+}
+
+.recruit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recruit-container h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: #8fd3d6;
+}
+
+.recruit-intro {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
+
+/* 募集状況切り替えボタン */
+.recruit-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.toggle-btn {
+  padding: 0.8em 1.5em;
+  background: #333;
+  color: #fff;
+  border: 2px solid #8fd3d6;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #8fd3d6;
+  color: #000;
+}
+
+.toggle-btn.active {
+  background: #8fd3d6;
+  color: #000;
+}
+
+/* 雇用形態切り替えボタン */
+.employment-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.employment-btn {
+  padding: 0.6em 1.2em;
+  background: #222;
+  color: #fff;
+  border: 1px solid #8fd3d6;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.employment-btn:hover {
+  background: #8fd3d6;
+  color: #000;
+}
+
+.employment-btn.active {
+  background: #8fd3d6;
+  color: #000;
+}
+
+/* 求人カテゴリ */
+.job-category {
+  margin-bottom: 4em;
+}
+
+/* カテゴリヘッダー */
+.category-header {
+  text-align: center;
+  margin-bottom: 2.5em;
+  padding: 2em;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 20px;
+  border: 2px solid #8fd3d6;
+}
+
+.category-header h2 {
+  font-size: 2.2em;
+  color: #8fd3d6;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 4px rgba(143, 211, 214, 0.3);
+}
+
+.category-desc {
+  font-size: 1.1em;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 求人サイト一覧 */
+.job-sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2em;
+  padding: 0 1em;
+}
+
+/* 求人カード */
+.job-card {
+  background: linear-gradient(145deg, #222 0%, #2a2a2a 100%);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(143, 211, 214, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(143, 211, 214, 0.2);
+}
+
+.job-card:hover::before {
+  opacity: 1;
+}
+
+/* 各求人サイト別カラー */
+.townwork-card {
+  border-color: #fcc800;
+}
+
+.townwork-card:hover {
+  border-color: #fcc800;
+  box-shadow: 0 15px 35px rgba(252, 200, 0, 0.3);
+}
+
+.torabayu-card {
+  border-color: #ff8090;
+}
+
+.torabayu-card:hover {
+  border-color: #ff8090;
+  box-shadow: 0 15px 35px rgba(255, 128, 144, 0.3);
+}
+
+.hatalike-card {
+  border-color: #6fc02c;
+}
+
+.hatalike-card:hover {
+  border-color: #6fc02c;
+  box-shadow: 0 15px 35px rgba(111, 192, 44, 0.3);
+}
+
+.indeed-card {
+  border-color: #004fcb;
+}
+
+.indeed-card:hover {
+  border-color: #004fcb;
+  box-shadow: 0 15px 35px rgba(0, 79, 203, 0.3);
+}
+
+/* カードヘッダー */
+.job-card-header {
+  padding: 1.5em;
+  background: linear-gradient(135deg, rgba(143, 211, 214, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+}
+
+.job-card-header h3 {
+  flex: 1;
+  font-size: 1.4em;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.job-type-badge {
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.parttime-badge {
+  background: linear-gradient(135deg, #8fd3d6, #7bc3c6);
+  color: #000;
+}
+
+.fulltime-badge {
+  background: linear-gradient(135deg, #ff69b4, #e55a9f);
+  color: #fff;
+}
+
+/* カードフッター */
+.job-card-footer {
+  padding: 1.5em;
+  border-top: 1px solid rgba(143, 211, 214, 0.2);
+}
+
+.job-link {
+  display: block;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+}
+
+.job-link:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.townwork-link {
+  background: linear-gradient(135deg, #fcc800, #e6b400);
+  color: #000;
+}
+
+.townwork-link:hover {
+  background: linear-gradient(135deg, #e6b400, #cc9f00);
+  transform: translateY(-2px);
+}
+
+.torabayu-link {
+  background: linear-gradient(135deg, #ff8090, #ff6680);
+  color: white;
+}
+
+.torabayu-link:hover {
+  background: linear-gradient(135deg, #ff6680, #ff4d70);
+  transform: translateY(-2px);
+}
+
+.hatalike-link {
+  background: linear-gradient(135deg, #6fc02c, #5fa925);
+  color: white;
+}
+
+.hatalike-link:hover {
+  background: linear-gradient(135deg, #5fa925, #4f921f);
+  transform: translateY(-2px);
+}
+
+.indeed-link {
+  background: linear-gradient(135deg, #004fcb, #0040a8);
+  color: white;
+}
+
+.indeed-link:hover {
+  background: linear-gradient(135deg, #0040a8, #003285);
+  transform: translateY(-2px);
+}
+
+/* 募集停止中の表示 */
+.no-recruitment {
+  text-align: center;
+  padding: 3em 2em;
+}
+
+.no-recruitment h2 {
+  font-size: 1.8em;
+  color: #8fd3d6;
+  margin-bottom: 1em;
+}
+
+.no-recruitment p {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
+
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.sns-links a {
+  padding: 0.6em 1.2em;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid #8fd3d6;
+  transition: all 0.3s ease;
+}
+
+.sns-links a:hover {
+  background: #8fd3d6;
+  color: #000;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 900px) {
+  .recruit-section {
+    padding: 2em 1em;
+  }
+  
+  .recruit-container h1 {
+    font-size: 2em;
+  }
+  
+  .recruit-intro {
+    font-size: 1em;
+  }
+  
+  .recruit-toggle {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .employment-toggle {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .job-sites {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+  }
+  
+  .category-header {
+    padding: 1.5em;
+  }
+  
+  .category-header h2 {
+    font-size: 1.8em;
+  }
+  
+  .job-card {
+    margin: 0 0.5em;
+  }
+  
+  .job-card-header {
+    padding: 1.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .recruit-section {
+    padding: 1.5em 0.5em;
+  }
+  
+  .category-header {
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .category-header h2 {
+    font-size: 1.6em;
+  }
+  
+  .category-desc {
+    font-size: 1em;
+  }
+  
+  .job-sites {
+    padding: 0;
+  }
+  
+  .job-card {
+    margin: 0;
+  }
+  
+  .job-card-header {
+    padding: 1em;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8em;
+  }
+  
+  .job-card-header h3 {
+    font-size: 1.2em;
+  }
+  
+  .job-card-footer {
+    padding: 1.2em;
+  }
+  
+  .sns-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* アニメーション効果 */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.job-card:nth-child(1) { animation-delay: 0.1s; }
+.job-card:nth-child(2) { animation-delay: 0.2s; }
+.job-card:nth-child(3) { animation-delay: 0.3s; }
+.job-card:nth-child(4) { animation-delay: 0.4s; }

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO基本設定 -->
+  <title>求人情報 - VAMOS5 | ポーカー&シーシャバーのスタッフ募集</title>
+  <meta name="description" content="VAMOS5では一緒に働く仲間を募集中！アルバイト・社員どちらも大歓迎。ポーカー&シーシャバーで楽しく働きませんか？溝の口駅徒歩1分。">
+  <meta name="keywords" content="VAMOS5,求人,募集,アルバイト,正社員,ポーカー,シーシャ,溝の口,川崎,スタッフ">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/recruit.html">
+  <meta property="og:title" content="求人情報 - VAMOS5">
+  <meta property="og:description" content="VAMOS5では一緒に働く仲間を募集中！アルバイト・社員どちらも大歓迎。">
+  <meta property="og:image" content="https://yourdomain.com/images/MainLogo.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="求人情報 - VAMOS5">
+  <meta property="twitter:description" content="VAMOS5では一緒に働く仲間を募集中！アルバイト・社員どちらも大歓迎。">
+  <meta property="twitter:image" content="https://yourdomain.com/images/MainLogo.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/recruit.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/Coin.png">
+  
+  <!-- reset.css -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-bar">
+      <a href="/" class="header-logo-link">
+        <img src="./images/Coin.png" alt="Coinロゴ" class="header-coin">
+      </a>
+      <nav class="header-nav" aria-label="メインメニュー">
+        <ul class="nav-list">
+          <li><a href="./index.html">ホーム</a></li>
+          <li><a href="./index.html#access">店舗案内</a></li>
+          <li><a href="./system.html">料金案内</a></li>
+          <li><a href="./event.html">イベント</a></li>
+          <li><a href="./recruit.html">求人情報</a></li>
+        </ul>
+        <ul class="sns-list">
+          <li><a href="https://x.com/vamos5poker" target="_blank" rel="noopener"><img src="./images/logo-black.png" alt="X" class="sns-icon"></a></li>
+          <li><a href="https://www.instagram.com/poker_vamos5?utm_source=ig_web_button_share_sheet&igsh=MWllYXpxbGNxMzR4ag==" target="_blank" rel="noopener"><img src="./images/Instagram_Glyph_Gradient.png" alt="Instagram" class="sns-icon"></a></li>
+          <li><a href="https://line.me/ti/g2/JM02KqnYOTyAwQrda2nu4GdcxNhAmOm15ntOIg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener"><img src="./images/LINE_Brand_icon.png" alt="LINE" class="sns-icon"></a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileMenu" aria-label="モバイルメニュー">
+      <ul>
+        <li><a href="./index.html">ホーム</a></li>
+        <li><a href="./index.html#access">店舗案内</a></li>
+        <li><a href="./system.html">料金案内</a></li>
+        <li><a href="./event.html">イベント</a></li>
+        <li><a href="./recruit.html">求人情報</a></li>
+      </ul>
+      <ul class="sns-list">
+        <li><a href="https://x.com/vamos5poker" target="_blank" rel="noopener"><img src="./images/logo-black.png" alt="X" class="sns-icon"></a></li>
+        <li><a href="https://www.instagram.com/poker_vamos5?utm_source=ig_web_button_share_sheet&igsh=MWllYXpxbGNxMzR4ag==" target="_blank" rel="noopener"><img src="./images/Instagram_Glyph_Gradient.png" alt="Instagram" class="sns-icon"></a></li>
+        <li><a href="https://line.me/ti/g2/JM02KqnYOTyAwQrda2nu4GdcxNhAmOm15ntOIg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener"><img src="./images/LINE_Brand_icon.png" alt="LINE" class="sns-icon"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="recruit-section">
+      <div class="recruit-container">
+        <h1>求人情報</h1>
+        <p class="recruit-intro">VAMOS5では一緒に働く仲間を募集しています！<br>ポーカー&シーシャバーで楽しく働きませんか？</p>
+        
+        <!-- 募集状況切り替えボタン -->
+        <div class="recruit-toggle">
+          <button class="toggle-btn active" data-type="recruiting">現在募集中</button>
+          <button class="toggle-btn" data-type="closed">募集停止中</button>
+        </div>
+
+        <!-- 募集中の表示 -->
+        <div class="recruit-content" id="recruiting-content">
+          <!-- 雇用形態選択 -->
+          <div class="employment-toggle">
+            <button class="employment-btn active" data-employment="all">すべて</button>
+            <button class="employment-btn" data-employment="parttime">アルバイト</button>
+            <button class="employment-btn" data-employment="fulltime">社員</button>
+          </div>
+
+          <!-- アルバイト求人 -->
+          <div class="job-category" data-employment="parttime">
+            <div class="category-header">
+              <h2>💼 アルバイト募集</h2>
+              <p class="category-desc">フレキシブルな勤務で始めてみませんか？</p>
+            </div>
+            <div class="job-sites">
+              <div class="job-card townwork-card">
+                <div class="job-card-header">
+                  <h3>TOWNWORK</h3>
+                  <span class="job-type-badge parttime-badge">アルバイト</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://townwork.net/viewjob/jobid_c2850779c22afc74/" target="_blank" rel="noopener" class="job-link townwork-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card torabayu-card">
+                <div class="job-card-header">
+                  <h3>とらばーゆ</h3>
+                  <span class="job-type-badge parttime-badge">アルバイト</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://toranet.jp/viewjob/c2850779c22afc74/" target="_blank" rel="noopener" class="job-link torabayu-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card hatalike-card">
+                <div class="job-card-header">
+                  <h3>はたらいく</h3>
+                  <span class="job-type-badge parttime-badge">アルバイト</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://www.hatalike.jp/viewjob/c2850779c22afc74/?betk=SoD-6_I3rF3zS3Tv7Z0PbzkdCdPP&jrtk=5-nrt1-0-1j85vtfdahenm800-c2850779c22afc74---6NYlbfkN0CH7sKLEMNPoY7fL_G42L025KSYVaRyU5nOSP33JYxhYBREZvLAW1KsfXg2EWw6iIXi3fARysfg-baGiNb2MEVhqdIZkvPs2HWC35AiEf1lkS6Bj5iGB3m6m603nn4J5m7W-aeuLhD7ousZIEB2zx-nKLv5OfVZFA4g9aKKZWbxzgRJU3QmDaHPQq5ece_s0pvLi3SA4T6JGUvJupEDjsG8CNWDsA8showZjKkkgJwxHMegMzzdu920G71dCjJ_5W9d2Av_hXcTQU2V588qLKwXj1u9I9IKLeC5o3CC7gLcRWugIOtFg6qMKC85XyTWiEMfdJSFdhF_lA9b0-vppb1qL4Sgp6-u1bM0VOrvCNRFcV-xXo0bSmYaZNOFaxzH0sXQSymno5Y9Du4oNWxrbXJJA3jb7cSsWKMZsa2sfQKwoE8xRkizC5aGcKdmuqDxtOlhYjEtaF27SgOepopdTMlBizl-sPDIc6zNzAIlMp7U6ZMccWhfD0VihIkSpXdZj3UH_Bj8kkMC2gK3wpsp8zJD2tg3rTKZqEqikeV2OT1JRdkjLMec6zFK9GcdH93m12HvCXy-iNqiPTdUX_PqliQEQI-4SceLerYiz8EmpVXXlwUW63G5urCYYQx_7L_e8XRkh5yKRUHdrXM7aME2GYVBkfUvEUWRk2ifCKu316_ebHm6dvc24YCsknYVJiPBMD1kYFECJePpakogxjMzotODbJCFT-6CmGO8L0OotkGfYyA1yaxKfDiwDzs4yToDD6c=&referrerId=030&seqNo=2&pageNo=1&placementId=recruit-hatalike-serp" target="_blank" rel="noopener" class="job-link hatalike-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card indeed-card">
+                <div class="job-card-header">
+                  <h3>Indeed</h3>
+                  <span class="job-type-badge parttime-badge">アルバイト</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://jp.indeed.com/cmp/%EF%BC%AC%EF%BD%89%EF%BD%86%EF%BD%89%EF%BD%98%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE-2/jobs?jk=c2850779c22afc74&start=0" target="_blank" rel="noopener" class="job-link indeed-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 社員求人 -->
+          <div class="job-category" data-employment="fulltime">
+            <div class="category-header">
+              <h2>🏢 社員募集</h2>
+              <p class="category-desc">安定した雇用で長期キャリアを築きましょう</p>
+            </div>
+            <div class="job-sites">
+              <div class="job-card townwork-card">
+                <div class="job-card-header">
+                  <h3>TOWNWORK</h3>
+                  <span class="job-type-badge fulltime-badge">正社員</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://townwork.net/viewjob/jobid_f9ff71c54d61509c/" target="_blank" rel="noopener" class="job-link townwork-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card torabayu-card">
+                <div class="job-card-header">
+                  <h3>とらばーゆ</h3>
+                  <span class="job-type-badge fulltime-badge">正社員</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://toranet.jp/viewjob/f9ff71c54d61509c/?betk=SoDc6_I3rGIFK5Q88R0DbzkdCdPP&jrtk=5-nrt1-0-1j8602il8h120804-f9ff71c54d61509c---6NYlbfkN0CH7sKLEMNPoY7fL_G42L025KSYVaRyU5nOSP33JYxhYBREZvLAW1KsfXg2EWw6iIXi3fARysfg-bydLM1hGS-XfIPwrrljHFZUebmoM-j_JjnRet5MnJCnyu6zQNExJrHrj2GJwo6eSmQz-A4jfaUcwdS6U-apDOdgZBbEIapdUGsMhp3t1mG83TdQQ9scy65N3loW0Oa14PgcKZ29n9BftGkoX3zguI9dPAorlARPLPiMKdLsrJXtb2BPKQGMxa5tBXirjO_0s6bDyd5GMt5wXQDAIFLscLDDC-mhACmImOBlz1-iiX5pPKzJ96inkuwLyxzTyRJUzprS6-4GjWueJka8gXVOD055v08pApPPK0pIOdOsoVPe2B8iGd32SnJf9DVPBQJqvvYH2oyeGL-klSGPsETpidfyWfzt9HZOq0mMeGJ5SwNk4f7ndSda3ehsVuTLUdsg_LzBDgvIk0_ldZaubLvATldpu5REsjC7P8knfKWtyEkcmsOGOGecM-oHws8M4ONAdc8CVoMQOCRUhUWDpmeIem3YSb20Ax0Nazm6v7Dyuu2cwXit7QspzfXWhzApGszWoQG1rYWCssbeZTDdvMTnz80KY6WNIqx8Ng6QHbK6uPamneMR5diePtB7vwnPYRowIi_VgwBy0aekC2uWS7w01U8OBVQyqAe4Q7qP1ioukkXPMiwcAUvMlLlq92XETfNV7_L6Clope_p1DWAyLlInwRbF4P3DL2SaNAXHZVxN38VXOqFbehCt-0w2hWEsUDXR0A==&referrerId=030&seqNo=1&pageNo=1&placementId=recruit-torabayu-serp" target="_blank" rel="noopener" class="job-link torabayu-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card hatalike-card">
+                <div class="job-card-header">
+                  <h3>はたらいく</h3>
+                  <span class="job-type-badge fulltime-badge">正社員</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://www.hatalike.jp/viewjob/f9ff71c54d61509c/?betk=SoDF6_I3rF32x0wjEp0DbzkdCdPP&jrtk=5-nrt1-0-1j85vtfdahenm800-f9ff71c54d61509c---6NYlbfkN0CH7sKLEMNPoY7fL_G42L025KSYVaRyU5nOSP33JYxhYBREZvLAW1KsfXg2EWw6iIXi3fARysfg-bydLM1hGS-XfIPwrrljHFZUebmoM-j_JjnRet5MnJCnyu6zQNExJrHrj2GJwo6eSmQz-A4jfaUcwdS6U-apDOfbSRzEsCPEt_wXe0ySEE-8WfF6E9Bm-6DC4qOxI9u6joNRs13FRf5uvWCaKQ9Ngpi8wx1E4m8hm-SNNKm30xlulommgc_vhpTB_CRzKlXHLE16N6Eypa_Pgss49ZCAWyX6cLaSL-D0oT5L4j0OUNPeCCHdb4ye5tq7yzHpYPHMM3RSwbbY0kCRvg6CB_SdHJg_juIId50_WazDZdTu5wgwnjNxBpWR2pyAWNkphnwPq0dtZgHHJKRB0H1gXVrEaGb7VKUPMFjFISefAVeafkWOlp0xNQkzZmR_-liiY0VnuKODRbmSS5zHxmz1GhAumljTYLMZBLg5q32H29FR-lEQXStdGpHmvG3IX6dp0vvsIvM-MUf7i5wgQPsNENz7Tk6yy8Dt4UfAXxQelVXcqtG_GQ21dtAyDylSFPNiVZyriXQ-PKZTIukF-0vL_iNHZ7JimJSmzvZ-99yotsRIR1OeaMK1u1VY8mAYHtbkxKwpR8_PC6QixdLvHdaM5mx9nHqGi3za55R_hoO5zT0fr3Fz_iSZACfioM8wt9UH-duf2IxROBFvb8GZNtNkxRUUyHcQBaAMs-WDHvbxof4QVW2xcSBUpSn8XZVav_JdBXrt2A==&referrerId=030&seqNo=1&pageNo=1&placementId=recruit-hatalike-serp" target="_blank" rel="noopener" class="job-link hatalike-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+              <div class="job-card indeed-card">
+                <div class="job-card-header">
+                  <h3>Indeed</h3>
+                  <span class="job-type-badge fulltime-badge">正社員</span>
+                </div>
+                <div class="job-card-footer">
+                  <a href="https://jp.indeed.com/cmp/%EF%BC%AC%EF%BD%89%EF%BD%86%EF%BD%89%EF%BD%98%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE-2/jobs?jk=f9ff71c54d61509c&start=0" target="_blank" rel="noopener" class="job-link indeed-link">
+                    🔗 求人詳細を見る
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 募集停止中の表示 -->
+        <div class="recruit-content" id="closed-content" style="display: none;">
+          <div class="no-recruitment">
+            <h2>現在スタッフの募集はありません</h2>
+            <p>今後の募集については、SNSやWebサイトでお知らせいたします。</p>
+            <div class="sns-links">
+              <a href="https://x.com/vamos5poker" target="_blank" rel="noopener">X (Twitter)</a>
+              <a href="https://www.instagram.com/poker_vamos5" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://line.me/ti/g2/JM02KqnYOTyAwQrda2nu4GdcxNhAmOm15ntOIg" target="_blank" rel="noopener">LINE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="./index.html">ホーム</a></li>
+        <li><a href="./index.html#access">店舗案内</a></li>
+        <li><a href="./system.html">料金案内</a></li>
+        <li><a href="./event.html">イベント</a></li>
+        <li><a href="./recruit.html">求人情報</a></li>
+      </ul>
+    </nav>
+    <div class="footer-sns">
+      <div>SNS</div>
+      <a href="https://x.com/vamos5poker" target="_blank" rel="noopener"><img src="./images/logo-white.png" alt="X" class="sns-icon"></a>
+      <a href="https://www.instagram.com/poker_vamos5?utm_source=ig_web_button_share_sheet&igsh=MWllYXpxbGNxMzR4ag==" target="_blank" rel="noopener"><img src="./images/Instagram_Glyph_Gradient.png" alt="Instagram" class="sns-icon"></a>
+      <a href="https://line.me/ti/g2/JM02KqnYOTyAwQrda2nu4GdcxNhAmOm15ntOIg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener"><img src="./images/LINE_Brand_icon.png" alt="LINE" class="sns-icon"></a>
+    </div>
+    <div class="footer-copyright">
+      © 2025 Poker & Shisha Bar VAMOS5
+    </div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('show');
+          hamburger.classList.toggle('active');
+        });
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', function(e) {
+          if (mobileMenu.classList.contains('show')) {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+              mobileMenu.classList.remove('show');
+              hamburger.classList.remove('active');
+            }
+          }
+        });
+      }
+
+      // 募集状況切り替え
+      const toggleBtns = document.querySelectorAll('.toggle-btn');
+      const recruitingContent = document.getElementById('recruiting-content');
+      const closedContent = document.getElementById('closed-content');
+
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // アクティブ状態を切り替え
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          // コンテンツを切り替え
+          const type = this.dataset.type;
+          if (type === 'recruiting') {
+            recruitingContent.style.display = 'block';
+            closedContent.style.display = 'none';
+          } else {
+            recruitingContent.style.display = 'none';
+            closedContent.style.display = 'block';
+          }
+        });
+      });
+
+      // 雇用形態切り替え
+      const employmentBtns = document.querySelectorAll('.employment-btn');
+      const jobCategories = document.querySelectorAll('.job-category');
+
+      employmentBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // アクティブ状態を切り替え
+          employmentBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          // 雇用形態フィルタリング
+          const employment = this.dataset.employment;
+          jobCategories.forEach(category => {
+            const categoryEmployment = category.dataset.employment;
+            if (employment === 'all' || employment === categoryEmployment) {
+              category.style.display = 'block';
+            } else {
+              category.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
